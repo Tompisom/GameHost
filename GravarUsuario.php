@@ -1,10 +1,8 @@
 <?php
-	//date_default_timezone_set('America/Sao_Paulo');
-  	//$AccountCreation = date('d/m/Y');
 	$AccountCreation = $_GET['date'];
-	$Nickname = $_GET['name'];;
-	$Email = $_GET['e-mail'];;
-	$TimeSpend = $_GET['timeSpend'];;
+	$Nickname = $_GET['name'];
+	$Email = $_GET['e-mail'];
+	$TimeSpend = $_GET['timeSpend'];
 	try{
 		include "conexao.php";
 
