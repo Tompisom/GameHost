@@ -1,21 +1,21 @@
-﻿<?php
-	date_default_timezone_set('America/Sao_Paulo');
-  	$Data = date('d/m/Y H:i:s');
-	$Nome = "";
-	$Pontos = 0;
-	$Nome = $_GET['Nome'];
-	$Pontos = $_GET['Pontos'];
-
+<?php
+	//date_default_timezone_set('America/Sao_Paulo');
+  	//$AccountCreation = date('d/m/Y');
+	$AccountCreation = $_GET['date'];
+	$Nickname = $_GET['name'];;
+	$Email = $_GET['e-mail'];;
+	$TimeSpend = $_GET['timeSpend'];;
 	try{
 		include "conexao.php";
 
-		$sql= "INSERT INTO Participantes (Data, Nome, Pontos) VALUES(:Data, :Nome, :Pontos)";
+		$sql= "INSERT INTO Player (Nickname, AccountCreation, Email, TimeSpend) VALUES(:Nickname, :AccountCreation, :Email, :TimeSpend)";
 
 		$stmt = $db->prepare($sql);
 
-		$stmt->bindParam(':Data', $Data);
-		$stmt->bindParam(':Nome', $Nome);
-		$stmt->bindParam(':Pontos', $Pontos);
+		$stmt->bindParam(':Nickname', $Nickname);
+		$stmt->bindParam(':AccountCreation', $AccountCreation);
+		$stmt->bindParam(':Email', $Email);
+		$stmt->bindParam(':TimeSpend', $TimeSpend);	
 
 		$stmt->execute();
 
