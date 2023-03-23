@@ -1,0 +1,4 @@
+#!/bin/sh
+export SCRIPT_FILENAME=$PATH_TRANSLATED
+export REDIRECT_STATUS=200
+exec /usr/bin/php
